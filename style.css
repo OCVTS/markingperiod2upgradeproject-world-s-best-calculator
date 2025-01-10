@@ -1,0 +1,70 @@
+/* Setting margin and padding to zero will remove all pre existing margins and paddings there by default*/
+body {
+    margin: 0;
+    padding: 0;
+}
+#grid-layout {
+    display: grid; /*This enables a grid to be implemented*/
+    grid-template-rows: auto 1fr auto; /*Sets the grid rows determined here by 'auto 1fr auto' */
+    grid-template-columns: 15% 70% 15%; /*Sets the grid columns here derermined by '15% 70% 15%*/
+    grid-template-areas: /*The temple areas are detemined by the quotes below. Basically saying where we want our areas to be*/
+    "header header header"
+    "left main right"
+    "footer footer footer";
+    min-height: 98.3vh;
+}
+#header {
+    grid-area: header; /*Tells the program that the area of the class is the header grid*/
+    background-color: blueviolet;
+    text-align: center;
+    color: antiquewhite;
+}
+#leftSide {
+    grid-area: left; /*Tells the program that the area of the class is the left grid*/
+    background-color: #2b2b2b;
+    color: antiquewhite;
+    font-size: 81px;
+    text-align: center;
+}
+#main {
+    grid-area: main; /*Tells the program that the area of the class is the main grid*/
+    background-color: dimgray;
+    color: antiquewhite;
+    border: 4px groove antiquewhite;
+}
+#rightSide {
+    grid-area: right; /*Tells the program that the area of the class is the right grid*/
+    background-color: #2b2b2b;
+    color: antiquewhite;
+    font-size: 81px;
+    text-align: center;
+
+}
+#footer {
+    grid-area: footer; /*Tells the program that the area of the class is the footer grid*/
+    background-color: blueviolet;
+    color: antiquewhite;
+    text-align: center;
+}
+#calcDisplay {
+    border: 4px groove antiquewhite;
+    min-height: 10px;
+    font-size: 55px;
+    background-color: lightblue;
+    margin: 1vw 1vh;
+}
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*Tells the program that there will be three repeating rows*/
+    margin: 5px 30px;
+    gap: 5px;
+}
+.clickNum {
+    padding: 10px;
+    background-color: blueviolet;
+    color: antiquewhite;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 55px;
+}

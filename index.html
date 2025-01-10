@@ -1,15 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title></title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <meta charset="utf-8"> <!--This meta tag tells the system which charset we are using-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--This sets the viewport-->
+        <title>Simple Calculator</title>
+        <link href="style.css" rel="stylesheet" type="text/css" /> <!--Links to other files which are js and css-->
     </head>
     <body>
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <header>
+            <!-- Optional header content can go here -->
+        </header>
+
+        <main id="grid-layout">
+            <section id="header"><h1>===Simple Calculator===</h1></section>
+            <section id="main">
+                    <div id="calcDisplay">0</div> <!--The calcDisplay div is where the inputed numbers will be displayed-->
+                    <!--With in the "buttons" div I have buttons that will add a number, operator, clear, or calculate when clicked on.-->
+                <div id="buttons">
+                    <button class="clickNum" onClick="calcAdd('1')">1</button>
+                    <button class="clickNum" onClick="calcAdd('2')">2</button>
+                    <button class="clickNum" onClick="calcAdd('3')">3</button>
+                    <button class="clickNum" onClick="calcAdd('4')">4</button>
+                    <button class="clickNum" onClick="calcAdd('5')">5</button>
+                    <button class="clickNum" onClick="calcAdd('6')">6</button>
+                    <button class="clickNum" onClick="calcAdd('7')">7</button>
+                    <button class="clickNum" onClick="calcAdd('8')">8</button>
+                    <button class="clickNum" onClick="calcAdd('9')">9</button>
+                    <button class="clickNum" onClick="calcAdd('0')">0</button>
+                    <button class="clickNum" onClick="calcAdd('a')">a</button> <!--a is a random number used for testing-->
+                    <button class="clickNum" onClick="operator('+')">+</button>
+                    <button class="clickNum" onClick="operator('-')">-</button>
+                    <button class="clickNum" onClick="operator('x')">x</button> <!--This is the multiplication sign-->
+                    <button class="clickNum" onClick="operator('÷')">÷</button> <!--The division sign-->
+                    <button class="clickNum" onClick="operator('<')"><</button> <!--Less than-->
+                    <button class="clickNum" onClick="operator('>')">></button> <!--Greater than-->
+                    <button class="clickNum" onClick="operator('√')">√</button> <!--This allows square roots to be done-->
+                    <button class="clickNum" onClick="operator('%')">%</button> <!--This is the modulus-->
+                    <button class="clickNum" onclick="calcAdd('.')">.</button>
+                    <button class="clickNum" onclick="operator('^')">^</button>
+                    <button class="clickNum" onClick="operator('/')">/</button>
+                    <button class="clickNum" onClick="operator('≈')">≈</button>
+                    <button class="clickNum" onclick="operator('(')">(</button>
+                    <button class="clickNum" onClick="operator(')')">)</button>
+                    <button class="clickNum" id="equalSign" onClick="calculate()">=</button>
+                    <button class="clickNum" id="clearButton" onClick="del()">Del</button>
+                </div>
+            </section>
+            <!--Here with the right grid section I added numbers 5-9 for aesthetics.-->
+            <section id="rightSide">
+                <p>5</p>
+                <p>6</p>
+                <p>7</p>
+                <p>8</p>
+                <p>9</p>
+            </section>
+            <!--Here with the left grid section I added numbers 0-4 for aesthetics.-->
+            <section id="leftSide">
+                <p>0</p>
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+            </section>
+        </main>
+
+        <footer>
+            <!--Here is the copyright of me and OCVTS implemented in the footer. The &copy; text adds the copyright symbol.-->
+            <section id="footer">&copy; Paul Lotti and OCVTS 2024</section>
+        </footer>
+        <!--The script tag below allows the usage of JavaScript in the calculator-->
         <script src="script.js"></script>
     </body>
 </html>
