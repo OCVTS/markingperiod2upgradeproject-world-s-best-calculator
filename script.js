@@ -3,6 +3,7 @@ let userInput = '';
 let userOperator = '';
 let num1 = '';
 let num2 = '';
+let num3 = '';
 
 // This function enables the user to input numbers by taken the number and adding it to calDisplay
 function calcAdd(num) {
@@ -11,8 +12,8 @@ function calcAdd(num) {
 }
 
 // The add function will add the first inputed number and the second one if the + button is clicked
-function add(num1, num2) {
-    return num1 + num2;
+function add(num1, num2, num3) {
+    return num1 + num2 + num3;
 }
 
 // The subtract function will subtract the first inputed number and the second one if the - button is clicked
@@ -32,17 +33,17 @@ function divide(num1, num2) {
 
 // The lessThan function will determine if the second number is less than the first one when the < button is clicked
 function lessThan(num1, num2) {
-    return num1 <= num2;
+    return num1 < num2;
 }
 
 // The greaterThan function will determine if the first number is greater than the second one when the > button is clicked
 function greaterThan(num1, num2) {
-    return num1 >= num2;
+    return num1 > num2;
 }
 
 // The appendSquareRoot function will give the sqaure root of the first inputed number
 function appendSquareRoot() {
-    return Math.sqrt(userInput);
+    return Math.sqrt(parseInt(userInput));
   
 }
 
@@ -55,21 +56,21 @@ function modulous(num1, num2) {
 function del() {
     num1 = '';
     num2 = '';
+    num3 = '';
     userInput = '';
     calcDisplay.innerHTML = 0;
 }
 
-//
+// The decimal funtion allows for a decimal to be imputed 
 function decimal() {
     if (!userInput.includes('.')) {
         userInput += '.';
         calcDisplay.innerHTML = userInput;
     }
 }
-
 //
 function exponent() {
-
+    
 }
 
 //
@@ -96,7 +97,7 @@ function calculate() {
 
     switch(userOperator) { //This switch statement is what allows the buttons to properly work. Without this they won't work when pressed
         case '+':
-            calcDisplay.innerHTML = add(num1, num2);
+            calcDisplay.innerHTML = add(num1, num2, num3);
             break;
         case '-':
             calcDisplay.innerHTML = subtract(num1, num2);
@@ -151,4 +152,5 @@ function operator (op) {
     userOperator = op;
     num1 = parseInt(userInput);
     userInput= '';
+    calcDisplay.innerHTML = userOperator;
 }

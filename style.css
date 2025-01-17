@@ -53,12 +53,14 @@ body {
     background-color: lightblue;
     margin: 1vw 1vh;
 }
+
 #buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /*Tells the program that there will be three repeating rows*/
     margin: 5px 30px;
-    gap: 5px;
+    gap: 7px;
 }
+
 .clickNum {
     padding: 10px;
     background-color: blueviolet;
@@ -66,5 +68,9 @@ body {
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 55px;
+    font-size: 54px;
+}
+.clickNum:hover {
+    transform: scale(1.1);
+    filter: grayscale(50%) contrast(80%) brightness(0.6);
 }
