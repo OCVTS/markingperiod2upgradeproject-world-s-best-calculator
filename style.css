@@ -67,8 +67,9 @@ body {
     color: antiquewhite;
     text-align: center;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 54px;
+    border-radius: 50px;
+    font-size: 50px;
+    border: groove #2b2b2b;
 }
 .clickNum:hover {
     transform: scale(1.1);

@@ -1,9 +1,7 @@
 //These are the variables I used
 let userInput = '';
-let userOperator = '';
-let num1 = '';
-let num2 = '';
-let num3 = '';
+let numbers = [];
+let operators = [];
 
 // This function enables the user to input numbers by taken the number and adding it to calDisplay
 function calcAdd(num) {
@@ -12,8 +10,8 @@ function calcAdd(num) {
 }
 
 // The add function will add the first inputed number and the second one if the + button is clicked
-function add(num1, num2, num3) {
-    return num1 + num2 + num3;
+function add(numbers) {
+    return numbers + numbers;
 }
 
 // The subtract function will subtract the first inputed number and the second one if the - button is clicked
@@ -54,9 +52,8 @@ function modulous(num1, num2) {
 
 // The del function will delete all inputs and reset everything back to before. Simply making the inputs equal nothing and the display equal 0
 function del() {
-    num1 = '';
-    num2 = '';
-    num3 = '';
+    let numbers = [];
+    let operators = [];
     userInput = '';
     calcDisplay.innerHTML = 0;
 }
@@ -70,12 +67,12 @@ function decimal() {
 }
 //
 function exponent() {
-    
+    return Math.pow(userInput);
 }
 
 //
 function fraction() {
-
+    return 1 / num;
 }
 
 //
@@ -85,7 +82,7 @@ function round() {
 
 //
 function parentheses() {
-
+    return ();
 }
 
 
