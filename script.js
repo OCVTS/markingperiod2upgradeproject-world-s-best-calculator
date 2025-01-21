@@ -52,8 +52,8 @@ function modulous(num1, num2) {
 
 // The del function will delete all inputs and reset everything back to before. Simply making the inputs equal nothing and the display equal 0
 function del() {
-    let numbers = [];
-    let operators = [];
+    numbers = [];
+    operators = [];
     userInput = '';
     calcDisplay.innerHTML = 0;
 }
@@ -66,23 +66,21 @@ function decimal() {
     }
 }
 //
-function exponent() {
-    return Math.pow(userInput);
+function exponent(base, exp) {
+    return Math.pow(base, exp);
 }
-
 //
-function fraction() {
+function fraction(num) {
     return 1 / num;
 }
 
 //
-function round() {
-    return Math.round(userInput);
+function round(num) {
+    return Math.round(num);
 }
 
 //
 function parentheses() {
-    return ();
 }
 
 
