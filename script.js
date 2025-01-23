@@ -10,8 +10,8 @@ function calcAdd(num) {
 }
 
 // The add function will add the first inputed number and the second one if the + button is clicked
-function add(numbers) {
-    return numbers + numbers;
+function add(num1, num2) {
+    return num1 + num2;
 }
 
 // The subtract function will subtract the first inputed number and the second one if the - button is clicked
@@ -87,65 +87,51 @@ function parentheses() {
 
 // The calculate function stores every possible number and variable, which allows them to be activated. It will also allow the calculation inputed by the user to be done.
 function calculate() {
+    numbers.push(parseFloat(userInput)); // Push the last inputted number
+    let result = numbers[0];
 
-    num2 = parseInt(userInput);
-
-    switch(userOperator) { //This switch statement is what allows the buttons to properly work. Without this they won't work when pressed
-        case '+':
-            calcDisplay.innerHTML = add(num1, num2, num3);
-            break;
-        case '-':
-            calcDisplay.innerHTML = subtract(num1, num2);
-            break;
-        case 'x':
-            calcDisplay.innerHTML = multiply(num1, num2);
-            break;
-        case '÷':
-            calcDisplay.innerHTML = divide(num1, num2);
-            break;
-        case '<':
-            calcDisplay.innerHTML = lessThan(num1,num2);
-            break;
-        case '>':
-            calcDisplay.innerHTML = greaterThan(num1,num2);
-            break;
-        case '√':
-            calcDisplay.innerHTML = appendSquareRoot(num1,num2);
-            break;
-        case '%':
-            calcDisplay.innerHTML = modulous(num1, num2);
-            break;
-        case '.':
-            calcDisplay.innerHTML = decimal(num1, num2);
-            break;
-         case '^':
-            calcDisplay.innerHTML = exponent(num1, num2);
-            break;
-        case '/':
-            calcDisplay.innerHTML = fraction(num1, num2);
-            break;
-         case '≈':
-            calcDisplay.innerHTML = round(num1, num2);
-            break;
-         case '(':
-            calcDisplay.innerHTML = parentheses(num1, num2);
-            break;
-        case ')':
-            calcDisplay.innerHTML = parentheses(num1, num2);
-            break;
-        case 'del':
-             calcDisplay.innerHTML = del();
-            break;
-        default:
-            calcDisplay.innerHTML = 'ERROR';
-            break;
+    for (let i = 1; i < numbers.length; i++) {
+        switch (operators[i - 1]) {
+            case '+':
+                result = add(result, numbers[i]);
+                break;
+            case '-':
+                result = subtract(result, numbers[i]);
+                break;
+            case 'x':
+                result = multiply(result, numbers[i]);
+                break;
+            case '÷':
+                result = divide(result, numbers[i]);
+                break;
+            case '<':
+                result = lessThan(result, numbers[i]);
+                break;
+            case '>':
+                result = greaterThan(result, numbers[i]);
+                break;
+            case '%':
+                result = modulous(result, numbers[i]);
+                break;
+            case '^':
+                result = exponent(result, numbers[i]);
+                break;
+            default:
+                calcDisplay.innerHTML = 'ERROR';
+                return;
+        }
     }
+
+    calcDisplay.innerHTML = result;
+    numbers = [];
+    operators = [];
+    userInput = '';
 }
 
-// The operator function is what enables the operators to properly work. By having them allowed to be pressed by the user
-function operator (op) {
-    userOperator = op;
-    num1 = parseInt(userInput);
-    userInput= '';
-    calcDisplay.innerHTML = userOperator;
+// The operator function is what enables the operators to properly work
+function operator(op) {
+    numbers.push(parseFloat(userInput)); // Push the current number
+    operators.push(op);                  // Push the current operator
+    userInput = '';
+    calcDisplay.innerHTML = op;
 }
