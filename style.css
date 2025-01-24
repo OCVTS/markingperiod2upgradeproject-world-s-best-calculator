@@ -1,4 +1,5 @@
 :root {
+    /*These variables down here let me give the colors I want to use names, since I don't like looking at hex codes*/
     --xanthous: #FFBC42;
     --cafenoir: #573D1C;
     --tiffanyblue: #9DD9D2;
@@ -11,12 +12,11 @@
     font-style: normal;
   }
 /* Setting margin and padding to zero will remove all pre existing margins and paddings there by default*/
-html {
-    font-family: "Silkscreen", serif;
-}
-body {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* This prevents the scrollbar */
 }
 #grid-layout {
     display: grid; /*This enables a grid to be implemented*/
@@ -89,7 +89,7 @@ body {
     text-align: center;
     cursor: pointer;
     border-radius: 50px;
-    font-size: 50px;
+    font-size: 45px;
     border: solid var(--licorice);
     transition: transform 0.3s ease, filter 0.3s ease;
     box-shadow: 0 4px 6px var(--licorice);
