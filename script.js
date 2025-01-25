@@ -26,6 +26,9 @@ function multiply(num1, num2) {
 
 // The divide function will divide the first inputed number and the second one if the ÷ button is clicked
 function divide(num1, num2) {
+    if (num1 === 0 || num2 === 0) {
+        return 0;
+    }
     return num1 / num2;
 }
 
@@ -42,7 +45,6 @@ function greaterThan(num1, num2) {
 // The appendSquareRoot function will give the sqaure root of the first inputed number
 function appendSquareRoot() {
     return Math.sqrt(parseInt(userInput));
-  
 }
 
 // The modulous function will show the remander of the first and second inputed number when divided
@@ -70,8 +72,8 @@ function exponent(base, exp) {
     return Math.pow(base, exp);
 }
 //
-function fraction(num) {
-    return 1 / num;
+function fraction(num1, num2) {
+    return num1 / num2;
 }
 
 //
@@ -80,9 +82,14 @@ function round(num) {
 }
 
 //
-function parentheses() {
+function random() {
+    return Math.floor(Math.random() * 100);
 }
 
+//
+function pie() {
+    return Math.PI;
+}
 
 
 // The calculate function stores every possible number and variable, which allows them to be activated. It will also allow the calculation inputed by the user to be done.
@@ -115,6 +122,18 @@ function calculate() {
                 break;
             case '^':
                 result = exponent(result, numbers[i]);
+                break;
+            case '≈':
+                result = round(result, numbers[i]);
+                break;
+            case '/':
+                result = fraction(result, numbers[i]); // Convert only the current number to a fraction
+                break;
+            case 'R':
+                result = random(); 
+                break;
+            case 'π':
+                result = pie();
                 break;
             default:
                 calcDisplay.innerHTML = 'ERROR';
