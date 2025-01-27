@@ -1,105 +1,103 @@
 :root {
-    /*These variables down here let me give the colors I want to use names, since I don't like looking at hex codes*/
+    /* Defining custom color variables for reusability and easier readability */
     --xanthous: #FFBC42;
     --cafenoir: #573D1C;
     --tiffanyblue: #9DD9D2;
     --licorice: #13070C;
-  }
-  
+}
+
 .silkscreen-regular {
+    /* Using the Silkscreen font with specific style settings */
     font-family: "Silkscreen", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-/* Setting margin and padding to zero will remove all pre existing margins and paddings there by default*/
+    font-weight: 400; /* Regular weight */
+    font-style: normal; /* Normal style */
+}
+
+/* Resetting default browser margins and paddings and setting full height */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* This prevents the scrollbar */
+    overflow: hidden; /* Disables the scrollbar for a clean look */
 }
+
 #grid-layout {
-    display: grid; /*This enables a grid to be implemented*/
-    grid-template-rows: auto 1fr auto; /*Sets the grid rows determined here by 'auto 1fr auto' */
-    grid-template-columns: 15% 70% 15%; /*Sets the grid columns here derermined by '15% 70% 15%*/
-    grid-template-areas: /*The temple areas are detemined by the quotes below. Basically saying where we want our areas to be*/
-    "header header header"
-    "left main right"
-    "footer footer footer";
-    min-height: 98.3vh;
-    background-color: var(--licorice);
+    display: grid; /* Establishing a grid layout */
+    grid-template-rows: auto 1fr auto; /* Three rows: header, content, footer */
+    grid-template-columns: 15% 70% 15%; /* Three columns: left, main, right */
+    grid-template-areas:
+        "header header header" /* Header spans all three columns */
+        "left main right" /* Main content flanked by left and right areas */
+        "footer footer footer"; /* Footer spans all three columns */
+    min-height: 98.3vh; /* Ensuring the layout covers the viewport height */
+    background-color: var(--licorice); /* Background color using the custom variable */
 }
+
 #header {
-    grid-area: header; /*Tells the program that the area of the class is the header grid*/
+    grid-area: header; /* Assigning this area to the header grid */
     background-color: var(--cafenoir);
-    text-align: center;
-    color: ghostwhite;
-    box-shadow: inset 0 4px 6px var(--licorice);
+    text-align: center; /* Centering the header text */
+    color: ghostwhite; /* Setting text color */
+    box-shadow: inset 0 4px 6px var(--licorice); /* Adding an inset shadow effect */
 }
+
 #leftSide {
-    grid-area: left; /*Tells the program that the area of the class is the left grid*/
+    grid-area: left; /* Assigning this area to the left grid */
     background-color: var(--licorice);
     color: ghostwhite;
-    font-size: 5rem;
-    text-align: center;
+    font-size: 5rem; /* Large font size for emphasis */
+    text-align: center; /* Centering content */
 }
+
 #main {
-    grid-area: main; /*Tells the program that the area of the class is the main grid*/
-    background-color: steelblue;
+    grid-area: main; /* Assigning this area to the main grid */
+    background-color: steelblue; /* Background color for the main content */
     color: ghostwhite;
-    border: 4px solid ghostwhite;
-    border-radius: 50px;
-    box-shadow: inset 0 4px 6px var(--licorice);
+    border: 4px solid ghostwhite; /* Border for a framed look */
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: inset 0 4px 6px var(--licorice); /* Subtle shadow inside */
 }
+
 #rightSide {
-    grid-area: right; /*Tells the program that the area of the class is the right grid*/
+    grid-area: right; /* Assigning this area to the right grid */
     background-color: var(--licorice);
     color: ghostwhite;
-    font-size: 5rem;
+    font-size: 5rem; /* Large font size for symmetry with the left grid */
     text-align: center;
 }
+
 #footer {
-    grid-area: footer; /*Tells the program that the area of the class is the footer grid*/
+    grid-area: footer; /* Assigning this area to the footer grid */
     background-color: var(--cafenoir);
     color: ghostwhite;
-    text-align: center;
-    box-shadow: inset 0 4px 6px var(--licorice);
+    text-align: center; /* Centering footer content */
+    box-shadow: inset 0 4px 6px var(--licorice); /* Adding a shadow for depth */
 }
+
 #calcDisplay {
-    border: 4px solid ghostwhite;
-    min-height: 10px;
-    font-size: 55px;
-    background-color: var(--tiffanyblue);
-    margin: 1vw 1vh;
-    border-radius: 50px;
-    box-shadow: inset 0 4px 6px var(--licorice);
+    /* Styling the calculator display area */
+    border: 4px solid ghostwhite; /* Frame the display area */
+    min-height: 10px; /* Ensure a minimum height */
+    font-size: 55px; /* Large font size for visibility */
+    background-color: var(--tiffanyblue); /* Display background color */
+    margin: 1vw 1vh; /* Spacing around the display */
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: inset 0 4px 6px var(--licorice); /* Adding depth with a shadow */
 }
 
 #buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /*Tells the program that there will be three repeating rows*/
-    margin: 5px 30px;
-    gap: 7px;
+    display: grid; /* Using grid for button layout */
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    margin: 5px 30px; /* Spacing around the buttons */
+    gap: 7px; /* Space between buttons */
 }
 
 .clickNum {
+    /* Styling individual clickable buttons */
     padding: 10px;
-    background-color: var(--xanthous);
-    color: ghostwhite;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 45px;
-    border: solid var(--licorice);
-    transition: transform 0.3s ease, filter 0.3s ease;
-    box-shadow: 0 4px 6px var(--licorice);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Silkscreen", serif;
-}
-.clickNum:hover {
-    transform: scale(1.1);
-    filter: grayscale(50%) contrast(80%) brightness(0.6);
-    box-shadow: inset 0 4px 6px var(--licorice);
-}
+    background-color: var(--xanthous); /* Button color */
+    color: ghostwhite; /* Text color */
+    text-align: center; /* Centering text */
+    cursor: pointer; /* Indicating a clickable element */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 45px; /* Large fon
