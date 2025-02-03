@@ -1,75 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"> <!--This meta tag tells the system which charset we are using-->
-        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--This sets the viewport-->
-        <title>Your Calculator</title>
-        <link href="style.css" rel="stylesheet" type="text/css" /> <!--Links to other files which are js and css-->
-        <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-    </head>
+        <link href="land.css" rel="stylesheet" type="text/css"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
     <body>
         <header>
-            <!-- Optional header content can go here -->
+            <a href="calculate.html"><h1>World's Best Calculator</h1></a>
         </header>
-
-        <main id="grid-layout">
-            <section id="header"><h1>===The Better Calculator===</h1></section>
-            <section id="main">
-                    <div id="calcDisplay">0</div> <!--The calcDisplay div is where the inputed numbers will be displayed-->
-                    <!--With in the "buttons" div I have buttons that will add a number, operator, clear, or calculate when clicked on.-->
-                <div id="buttons">
-                    <button class="clickNum" onClick="calcAdd('1')">1</button>
-                    <button class="clickNum" onClick="calcAdd('2')">2</button>
-                    <button class="clickNum" onClick="calcAdd('3')">3</button>
-                    <button class="clickNum" onClick="calcAdd('4')">4</button>
-                    <button class="clickNum" onClick="calcAdd('5')">5</button>
-                    <button class="clickNum" onClick="calcAdd('6')">6</button>
-                    <button class="clickNum" onClick="calcAdd('7')">7</button>
-                    <button class="clickNum" onClick="calcAdd('8')">8</button>
-                    <button class="clickNum" onClick="calcAdd('9')">9</button>
-                    <button class="clickNum" onClick="calcAdd('0')">0</button>
-                    <button class="clickNum" onClick="calcAdd('a')">a</button> <!--a is a random number used for testing-->
-                    <button class="clickNum" onClick="operator('+')">+</button>
-                    <button class="clickNum" onClick="operator('-')">-</button>
-                    <button class="clickNum" onClick="operator('x')">x</button> <!--This is the multiplication sign-->
-                    <button class="clickNum" onClick="operator('÷')">÷</button> <!--The division sign-->
-                    <button class="clickNum" onClick="operator('<')"><</button> <!--Less than-->
-                    <button class="clickNum" onClick="operator('>')">></button> <!--Greater than-->
-                    <button class="clickNum" onClick="operator('√')">√</button> <!--This allows square roots to be done-->
-                    <button class="clickNum" onClick="operator('%')">%</button> <!--This is the modulus-->
-                    <button class="clickNum" onClick="calcAdd('.')">.</button>
-                    <button class="clickNum" onClick="operator('^')">^</button>
-                    <button class="clickNum" onClick="operator('/')">/</button>
-                    <button class="clickNum" onClick="operator('≈')">≈</button>
-                    <button class="clickNum" onClick="operator('R')">R</button>
-                    <button class="clickNum" onClick="operator('π')">π</button>
-                    <button class="clickNum" id="equalSign" onClick="calculate()">=</button>
-                    <button class="clickNum" id="clearButton" onClick="del()">Del</button>
-                </div>
-            </section>
-            <!--Here with the right grid section I added numbers 5-9 for aesthetics.-->
-            <section id="rightSide">
-                <p>5</p>
-                <p>6</p>
-                <p>7</p>
-                <p>8</p>
-                <p>9</p>
-            </section>
-            <!--Here with the left grid section I added numbers 0-4 for aesthetics.-->
-            <section id="leftSide">
-                <p>0</p>
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-            </section>
+        <main>
+            <p class="describe">My project is a calculator, allowing the user to input their calculations and get the correct answer. The purpose is to make math easier for the users of this site and help negate any stress that comes along with mathematical equations.</p>
+            <ul>
+                <p class="basic">How I created and upgraded my project:</p>  
+                <li>HTML: The HTML was very easy, mainly just the standard stuff you'd expect. I linked the JS and CSS, added buttons that were a part of the calculator, put in the meta tags, and I added some numbers on the sides of the screen just for stylization.</li>
+                <li>CSS: I didn't really need to change much with my upgrade. I switched to a color scheme of Cafe Noir, Tiffany Blue, Ghost White, Licorice, Xanthous, and Steel Blue. I also changed up the size of my elements a bit so they could all fit onto one screen.</li>
+                <li>JavaScript: This was the tricky part, especially getting certain operators to work. The JS is where I put in multiple different functions to make the calculator work, like telling the computer which operations to perform when their buttons are pressed. It even enables the user to input multiple numbers and operators into one equation. </li>
+                <li>Challenges: I did face quite a few challenges, all while adding in the operators. I attempted to implement decimals and fractions but could not figure out how they work for the life of me, so I just kept them as is but added buttons for a random number and one for PI to compensate. It was also a bit of a struggle to implement the ability to have multiple operators and more than two numbers in a single equation, but I asked ChatGPT and it helped me figure out how to do what I needed.</li>
+                <li>Added Features: Didn't have to add much besides some new buttons. I added a buttons for random numbers, fractions, decimals, Pi, rounding, and also exponents.</li>
+              </ul>
         </main>
-
-        <footer>
-            <!--Here is the copyright of me and OCVTS implemented in the footer. The &copy; text adds the copyright symbol.-->
-            <section id="footer">&copy; Paul Lotti and OCVTS 2024</section>
-        </footer>
-        <!--The script tag below allows the usage of JavaScript in the calculator-->
-        <script src="script.js"></script>
     </body>
 </html>

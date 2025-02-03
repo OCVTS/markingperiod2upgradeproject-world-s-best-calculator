@@ -1,0 +1,53 @@
+:root {
+    /* Defining custom color variables for reusability and easier readability */
+    --xanthous: #FFBC42;
+    --cafenoir: #573D1C;
+    --tiffanyblue: #9DD9D2;
+    --licorice: #13070C;
+}
+
+/* Resetting default browser margins and paddings and setting full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Disables the scrollbar for a clean look */
+    background-color: var(--cafenoir);
+}
+
+a {
+    text-align: center;
+}
+a:link {
+    color: var(--tiffanyblue);
+}
+a:visited {
+    color: ghostwhite;
+}
+
+p {
+    text-align: center;
+    align-items: center;
+}
+
+ul {
+    text-align: center;   
+    color: steelblue;
+    font-size: 25px;
+    border: 5px groove ghostwhite;
+    list-style-type: none;
+}
+
+.describe {
+    font-size: 35px;
+    color: var(--licorice);
+}
+.basic {
+    color: var(--xanthous);
+    font-size: 30px;
+}
+
+img {
+    height: 25vh;
+    width: 25vw;
+}
