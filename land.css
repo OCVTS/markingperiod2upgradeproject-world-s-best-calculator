@@ -30,24 +30,23 @@ p {
     align-items: center;
 }
 
-ul {
+li {
     text-align: center;   
     color: steelblue;
     font-size: 25px;
     border: 5px groove ghostwhite;
     list-style-type: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 .describe {
-    font-size: 35px;
-    color: var(--licorice);
+    font-size: 40px;
+    color: var(--licorice)
 }
 .basic {
     color: var(--xanthous);
-    font-size: 30px;
-}
-
-img {
-    height: 25vh;
-    width: 25vw;
+    font-size: 35px;
 }

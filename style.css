@@ -94,7 +94,7 @@ html, body {
 
 .clickNum {
     /* Styling individual clickable buttons */
-    padding: 10px;
+    padding: 15px;
     background-color: var(--xanthous); /* Button color */
     color: ghostwhite; /* Text color */
     text-align: center; /* Centering text */
